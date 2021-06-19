@@ -119,6 +119,3 @@ Git LFS (Large File Storage) is a Git extension, which reduces the impact of lar
 ## GitLab's Release Stage
 
 GitLab helps automate the release and delivery of applications, shortening the delivery lifecycle, streamlining manual processes, and accelerating team velocity. With zero-touch Continuous Delivery (CD) built right into the pipeline, deployments can be automated to multiple environments like staging and production, and the system just knows what to do without being told - even for more advanced patterns like canary deployments. With feature flags, built-in auditing/traceability, on-demand environments, and GitLab pages for static content delivery, you'll be able to deliver faster and with more confidence than ever before.
-
-
-# Gitlab Security Scanning
