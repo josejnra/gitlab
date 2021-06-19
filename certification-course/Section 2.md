@@ -90,4 +90,35 @@ It is enabled by default for all of your projects but can be disabled by your ad
 
 # Gitlab's Package and Release Functions
 
+## GitLab's Package Stage 
+
+GitLab enables teams to package their applications and dependencies, manage containers, and build artifacts with ease. The private, secure container registry and artifact repositories are built-in and preconfigured out-of-the box to work seamlessly with GitLab source code management and CI/CD pipelines. Ensure DevOps acceleration with automated software pipelines that flow freely without interruption.
+
+### Package Registry
+Every team needs a place to store their packages and dependencies. GitLab aims to provide a comprehensive solution, integrated into our single application, that supports package management for all commonly used languages and binary formats.
+
+### Container Registry
+A container registry* is a secure and private registry for Docker images built-in to GitLab. Creating, pushing, and retrieving images works out of the box with GitLab CI/CD.
+
+*Available for Premium and Ultimate
+
+### Helm Chart Registry
+Kubernetes cluster integrations can take advantage of Helm charts to standardize their distribution and install processes. Supporting a built-in helm chart registry allows for better, self-managed container orchestration.
+
+### Dependency Proxy
+The GitLab dependency proxy* can serve as an intermediary between your local developers and automation and the world of packages that need to be fetched from remote repositories. By adding a security and validation layer to a caching proxy, you can ensure reliability, accuracy, and audit-ability for the packages you depend on.
+
+*Available on Premier and Ultimate 
+
+### Jupyter Notebooks
+Jupyter Notebooks are a common type of code used for data-science use cases. With GitLab you can store and version control those notebooks in the same way you store packages and application code.
+
+### Git LFS
+Git LFS (Large File Storage) is a Git extension, which reduces the impact of large files in your repository by downloading the relevant versions of them lazily. Specifically, large files are downloaded during the checkout process rather than during cloning or fetching.
+
+## GitLab's Release Stage
+
+GitLab helps automate the release and delivery of applications, shortening the delivery lifecycle, streamlining manual processes, and accelerating team velocity. With zero-touch Continuous Delivery (CD) built right into the pipeline, deployments can be automated to multiple environments like staging and production, and the system just knows what to do without being told - even for more advanced patterns like canary deployments. With feature flags, built-in auditing/traceability, on-demand environments, and GitLab pages for static content delivery, you'll be able to deliver faster and with more confidence than ever before.
+
+
 # Gitlab Security Scanning
