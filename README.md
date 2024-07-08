@@ -19,12 +19,17 @@ docker exec -it gitlab-runner \
 gitlab-runner register \
     --non-interactive \
     --executor "docker" \
-    --docker-image "alpine:latest" \
     --url "http://gitlab" \
     --token "<token>" \
+    --docker-image "alpine:latest" \
     --docker-network-mode "<GITLAB-SERVICE-NAME>_<NETWORK-NAME>"  # docker inspect gitlab-runner | grep -in network
 
 # other helpful commands
 docker exec gitlab-runner gitlab-runner run
 docker exec gitlab-runner gitlab-runner --help
 ```
+
+## Some Links
+- [Connect CI Runner to Docker network](https://gitlab.com/gitlab-org/gitlab-runner/-/issues/1846)
+- [Gitlab runner with dind](https://gitlab.com/TyIsI/gitlab-runner-docker-compose/-/blob/main/docker-compose.yml?ref_type=heads)
+- [Gitlab runner with dind 2](https://gist.github.com/benoitpetit/cbe19cdd369ec8c1e0defd245d91751f)
