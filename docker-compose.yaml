@@ -1,5 +1,8 @@
 networks:
   gitlab_network:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
 
 services:
 
@@ -20,8 +23,9 @@ services:
       - ./gitlab/logs:/var/log/gitlab
       - ./gitlab/data:/var/opt/gitlab
     networks:
-      - gitlab_network
-
+      gitlab_network:
+        ipv4_address: 172.20.0.2
+  
   gitlab-runner:
     image: gitlab/gitlab-runner:alpine
     container_name: gitlab-runner
@@ -29,4 +33,5 @@ services:
       - ./runner-config:/etc/gitlab-runner
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
-      - gitlab_network
+      gitlab_network:
+        ipv4_address: 172.20.0.3
