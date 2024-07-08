@@ -1,14 +1,14 @@
-version: "3.8"
+networks:
+  gitlab_network:
 
 services:
-  
-  gitlabweb:
-    image: gitlab/gitlab-ce:14.3.0-ce.0
-    container_name: gitlab-web
-    hostname: 'gitlab.example.com'
+
+  gitlab:
+    image: gitlab/gitlab-ce:17.0.3-ce.0
+    container_name: gitlab
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://gitlab.example.com:80'
+        external_url 'http://gitlab:80'
         gitlab_rails['gitlab_shell_ssh_port'] = 2224
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
@@ -16,6 +16,17 @@ services:
       - "443:443"
       - "2222:22"
     volumes:
-      - ./config:/etc/gitlab
-      - ./logs:/var/log/gitlab
-      - ./data:/var/opt/gitlab
+      - ./gitlab/config:/etc/gitlab
+      - ./gitlab/logs:/var/log/gitlab
+      - ./gitlab/data:/var/opt/gitlab
+    networks:
+      - gitlab_network
+
+  gitlab-runner:
+    image: gitlab/gitlab-runner:alpine
+    container_name: gitlab-runner
+    volumes:
+      - ./runner-config:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - gitlab_network
